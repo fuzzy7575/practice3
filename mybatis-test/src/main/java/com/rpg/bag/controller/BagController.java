@@ -20,7 +20,7 @@ public class BagController {
 
     public void selectBagItemList() {
 
-        // 전체 제품 목록을 조회하는 메소드
+        // 전체 소지품 목록을 조회하는 메소드
 
         List<BagAndItemDTO> bagItemList = bagService.selectBagItemList();
 
