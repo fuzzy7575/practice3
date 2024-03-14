@@ -9,48 +9,17 @@ import java.util.List;
 public class BagPrint {
     public void printBagItemList(List<BagAndItemDTO> bagItemList) {
 
-        // 전체 조회한 목록 출력하는 메소드
-//        for(BagAndItemDTO bagItem : bagItemList) {
-//            System.out.println(bagItem);
-//        }
-
-//        for(int i = 0; i < bagItemList.size;i++){
-//
-//        }
-//
-//        int index = 0;
-//        for (BagAndItemDTO bagItem : bagItemList) {
-//            if(index == 0) {
-//                System.out.println("착용 중인 아이템 =============");
-//                System.out.println(bagItem);
-//            } else {
-//                System.out.println("소지품 ======================");
-//                System.out.println(bagItem);
-//            }
-//            index++;
-//        }
-
-        System.out.println("List 값 확인 : " + bagItemList);
-        System.out.println("List 인덱스 값 확인 : " + bagItemList.get(0));
-
-
-        System.out.println("List 크기 확인 : " + bagItemList.size());
-
-        System.out.println("List 안에 특정 값 들었는지 확인 : " + bagItemList.contains("셔츠와 청바지"));
-        System.out.println("List 안에 특정 값 들었는지 확인 : " + bagItemList.contains(","));
-
-        System.out.println("List 안에 아무것도 들지 않았는지 확인 : " + bagItemList.isEmpty());
-
-
-
+        // 전체 소지품 목록 출력하는 메소드
         for (BagAndItemDTO bagItem : bagItemList) {
-                System.out.println("착용 중인 아이템 =============");
-                System.out.println(bagItem);
-//                Arrays.toString(bagItem);
-
-                System.out.println("소지품 ======================");
-            System.out.println(bagItem.getItemCode());
-//                System.out.println(bagItem);
+            for(int i = 0 ; i < bagItem.getBagItemList().size(); i++) {
+                    if(bagItem.getBagItemList().get(i).getCategory()==1) {
+                    System.out.println("착용 중인 아이템 =============");
+                    System.out.println(bagItem.getBagItemList().get(i));
+                } else {
+                    System.out.println("소지품 ======================");
+                    System.out.println(bagItem.getBagItemList().get(i));
+                }
+            }
         }
 
     }
